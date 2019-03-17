@@ -1,33 +1,73 @@
-.App {
-  text-align: center;
+
+.galleryContainer{
+  width: 1000px;
+  height:200px;
+  margin: 0;
+  padding: 0;
+
+
+}
+.galleryContainer .slideShowContainer{
+  width: 100%;
+  height: 90%;
+  overflow: hidden;
+  background-color: gainsboro;
+  position: relative;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+.galleryContainer .slideShowContainer .imageHolder{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  opacity: 0;
+}
+.galleryContainer .slideShowContainer .imageHolder img{
+  width: 100%;
+  height: 100%;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.galleryContainer .moveLeftCurrentSlide{
+  animation-name: moveLeftCurrent;
+  animation-duration: 0.5s;
+  animation-timing-function: linear;
+  animation-fill-mode:forwards;
+
+}
+.galleryContainer .moveLeftNextSlide{
+  animation-name: moveLeftNext;
+  animation-duration: 0.5s;
+  animation-timing-function: linear;
+  animation-fill-mode:forwards;
+}
+@keyframes moveLeftCurrent {
+  from {margin-left: 0;opacity: 1;}
+  to {margin-left: -100%;opacity: 1;}
+}
+@keyframes moveLeftNext {
+  from {margin-left: 100%;opacity: 1;}
+  to {margin-left: 0%;opacity: 1;}
 }
 
-.App-link {
-  color: #61dafb;
+
+.galleryContainer .moveRightCurrentSlide{
+  animation-name: moveRightCurrent;
+  animation-duration: 0.5s;
+  animation-timing-function: linear;
+  animation-fill-mode:forwards;
+}
+.galleryContainer .moveRightPrevSlide{
+  animation-name: moveRightPrev;
+  animation-duration: 0.5s;
+  animation-timing-function: linear;
+  animation-fill-mode:forwards;
+}
+@keyframes moveRightCurrent {
+  from {margin-left: 0;opacity: 1;}
+  to {margin-left: 100%;opacity: 1;}
+}
+@keyframes moveRightPrev {
+  from {margin-left: -100%;opacity: 1;}
+  to {margin-left: 0%;opacity: 1;}
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+
