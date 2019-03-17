@@ -45,7 +45,7 @@ class Slideshow extends Component {
     componentDidMount() {
         //To set new window.innerWidth when user resize window
         window.addEventListener("resize", this.updateDimensions);
-        //Run initialization of slider
+        //Run initialization of slider (When got data)
         this.setTimer();
     }
 
